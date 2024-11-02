@@ -1,6 +1,12 @@
 # llm-api
 for self hosting LLM models within a FastAPI app
 
+# Built using
+
+- [Hugging Face](https://huggingface.co/)
+- [vllm](https://github.com/vllm-project/vllm)
+
+
 # Setup
 
 Install
