@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "llm-api"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.4"
+pydantic = "^2.9.2"
+uvicorn = "^0.32.0"
+transformers = "^4.46.1"
+vllm = "^0.6.3.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
