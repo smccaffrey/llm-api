@@ -4,6 +4,10 @@ server:
 
 MERGE_BASE = $(shell git merge-base HEAD main)
 
+.PHONY: lint
+lint:
+	poetry run pre-commit run
+
 # Pre-commit against branch changes
 .PHONY: lint-branch
 lint-branch:
