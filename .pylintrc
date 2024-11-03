@@ -5,4 +5,5 @@ disable=
     import-error,
     line-too-long,
     redefine-outer-name,
-    unknown-option-value
+    unknown-option-value,
+    too-few-public-methods
