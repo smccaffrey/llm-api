@@ -1,7 +1,6 @@
 from functools import lru_cache
-from transformers import pipeline
-from transformers.pipelines.base import Pipeline
-import torch
+from transformers import pipeline  # type: ignore
+from transformers.pipelines.base import Pipeline  # type: ignore
 
 MODEL_NAME = "gpt2"
 

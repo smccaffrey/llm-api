@@ -21,4 +21,3 @@ async def get(
     return LlmResponse(
         response=response
     )
-
