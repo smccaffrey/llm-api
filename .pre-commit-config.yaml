@@ -34,12 +34,12 @@ repos:
         stages: [commit]
         language: system
         types: [python]
-    # -   id: mypy
-    #     name: mypy
-    #     entry: poetry run mypy
-    #     stages: [commit]
-    #     language: system
-    #     types: [python]
+    -   id: mypy
+        name: mypy
+        entry: poetry run mypy
+        stages: [commit]
+        language: system
+        types: [python]
 
     # https://github.com/hadolint/hadolint
     # Use docker to manage hadolint so that it doesn't need to be
