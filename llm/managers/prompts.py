@@ -8,7 +8,7 @@ model_name = "gpt2"
 generator = pipeline(task="text-generation", model=model_name)
 
 
-class LlmManger:
+class PromptsManger:
     """For interacting with local LLMs"""
 
     def prompt_response(self, prompt: str, model: Pipeline) -> str:
@@ -19,4 +19,4 @@ class LlmManger:
         return " ".join([output["generated_text"] for output in outputs])
 
 
-llm_manager = LlmManger()
+prompts_manager = PromptsManger()
