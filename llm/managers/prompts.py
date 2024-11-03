@@ -1,11 +1,6 @@
 from typing import Any, Generator
 
-from transformers import pipeline  # type: ignore
 from transformers.pipelines.base import Pipeline  # type: ignore
-
-
-model_name = "gpt2"
-generator = pipeline(task="text-generation", model=model_name)
 
 
 class PromptsManger:
