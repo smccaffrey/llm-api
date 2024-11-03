@@ -6,6 +6,12 @@ for self hosting LLM models within a FastAPI app
 - [Hugging Face](https://huggingface.co/)
 - [vllm](https://github.com/vllm-project/vllm)
 
+# Features
+- **Stateless Model Calls:** The model itself, as loaded by the Hugging Face Transformers library, is stateless for each inference. When a request is sent, it doesn’t store or retain any data from that request after completing the response. Each prompt (input) is processed independently and does not affect subsequent prompts.
+
+- **Caching the Model, Not the Data:** The lru_cache decorator only caches the model instance itself, not any data or output associated with individual requests. This means the model is reused in memory, but the data it processes remains isolated to each specific call.
+
+- **Thread Safety and Memory Isolation:** FastAPI, when combined with `@lru_cache()`, handles concurrent requests by independently managing each request’s lifecycle. Even though the model instance is shared, the inferences themselves don’t share state, so there’s no data "leakage" between requests. 
 
 # Setup
 
@@ -40,3 +46,6 @@ curl --location --request GET 'http://0.0.0.0:3000/llm' \
     "prompt": "what are cats?"
 }'
 ```
+
+# Contributing
+yes please
