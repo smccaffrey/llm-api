@@ -3,8 +3,8 @@
 from pydantic import BaseModel
 
 
-class LlmRequest(BaseModel):
+class PromptsRequest(BaseModel):
     prompt: str
 
-class LlmResponse(BaseModel):
+class PromptsResponse(BaseModel):
     response: str

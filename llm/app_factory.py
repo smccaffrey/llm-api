@@ -7,7 +7,7 @@ def get_app() -> FastAPI:
     """Instantiate a users_api FastAPI instance. This instance will
     be parametrized by the values in users_api.settings.
     """
-    app = FastAPI()  # type: ignore
+    app: FastAPI = FastAPI()
 
     app.add_middleware(
         CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
