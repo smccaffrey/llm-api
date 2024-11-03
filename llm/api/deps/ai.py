@@ -4,10 +4,8 @@ from transformers.pipelines.base import Pipeline  # type: ignore
 
 MODEL_NAME = "gpt2"
 
+
 @lru_cache()
 def get_model() -> Pipeline:
-    generator: Pipeline = pipeline(
-        task="text-generation",
-        model=MODEL_NAME
-    )
+    generator: Pipeline = pipeline(task="text-generation", model=MODEL_NAME)
     return generator
