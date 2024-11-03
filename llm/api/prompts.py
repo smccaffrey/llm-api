@@ -11,6 +11,8 @@ prompts_router = LlmRouter()
 
 
 @prompts_router.get("/")
-async def get(request: PromptsRequest, model: Pipeline = Depends(get_model)) -> PromptsResponse:
+async def get(
+    request: PromptsRequest, model: Pipeline = Depends(get_model)
+) -> PromptsResponse:
     response: str = llm_manager.prompt_response(prompt=request.prompt, model=model)
     return PromptsResponse(response=response)
