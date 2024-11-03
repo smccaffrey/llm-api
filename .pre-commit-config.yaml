@@ -1,0 +1,57 @@
+default_stages: [commit]
+repos:
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+        stages: [commit]
+    -   id: end-of-file-fixer
+        stages: [commit]
+    -   id: trailing-whitespace
+        stages: [commit]
+    -   id: check-toml
+        stages: [commit]
+
+-   repo: local
+    hooks:
+    -   id: pylint
+        name: pylint
+        entry: poetry run pylint
+        stages: [commit]
+        language: system
+        types: [python]
+        args: [--extension-pkg-whitelist=pydantic]
+    # -   id: flake8
+    #     name: flake8
+    #     entry: poetry run flake8
+    #     stages: [commit]
+    #     language: system
+    #     types: [python]
+    -   id: black
+        name: black
+        entry: poetry run black
+        stages: [commit]
+        language: system
+        types: [python]
+    -   id: mypy
+        name: mypy
+        entry: poetry run mypy
+        stages: [commit]
+        language: system
+        types: [python]
+
+    # https://github.com/hadolint/hadolint
+    # Use docker to manage hadolint so that it doesn't need to be
+    # installed separately via the OS package manager.
+    -   id: dockerfile-lint
+        name: Dockerfile Lint
+        language: docker_image
+        entry: hadolint/hadolint:v1.17.6 hadolint
+        files: Dockerfile
+
+-   repo: https://github.com/milin/giticket
+    rev: v1.0
+    hooks:
+    -   id:  giticket
+        args: ['--mode=regex_match', '--format=[{ticket}] {commit_msg}']

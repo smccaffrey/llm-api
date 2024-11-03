@@ -1,0 +1,9 @@
+[messages control]
+disable=
+    missing-docstring,
+    invalid-name,
+    import-error,
+    line-too-long,
+    redefine-outer-name,
+    unknown-option-value,
+    too-few-public-methods

@@ -12,6 +12,10 @@ pydantic = "^2.9.2"
 uvicorn = "^0.32.0"
 transformers = "^4.46.1"
 vllm = "^0.6.3.post1"
+pre-commit = "^4.0.1"
+black = "^24.10.0"
+mypy = "^1.13.0"
+pylint = "^3.3.1"
 
 
 [build-system]
