@@ -7,10 +7,10 @@ from llm.schemas.llm import LlmRequest, LlmResponse
 from llm.managers.llm import llm_manager
 
 
-llm_router = LlmRouter()
+prompts_router = LlmRouter()
 
 
-@llm_router.get("/")
+@prompts_router.get("/")
 async def get(request: LlmRequest, model: Pipeline = Depends(get_model)) -> LlmResponse:
     response: str = llm_manager.prompt_response(prompt=request.prompt, model=model)
     return LlmResponse(response=response)

@@ -1,6 +1,6 @@
 from llm.api.router import LlmRouter
 
-from llm.api.llm import llm_router
+from llm.api.prompts import prompts_router
 
 
 root_router = LlmRouter()
@@ -12,4 +12,4 @@ def health_check() -> int:
     return 200
 
 
-root_router.include_router(llm_router, prefix="/llm")
+root_router.include_router(prompts_router, prefix="/prompts")
