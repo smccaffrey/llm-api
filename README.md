@@ -49,3 +49,11 @@ curl --location --request GET 'http://0.0.0.0:3000/llm' \
 
 # Contributing
 yes please
+
+## Generating stub files for poorly typed LLM libraries
+
+```sh
+poetry run pyright --createstub [package-name]
+```
+
+**Note: Ensure `pyrightconfig.json` captures all stub paths in the `"include"` paths**

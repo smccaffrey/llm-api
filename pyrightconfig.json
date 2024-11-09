@@ -1,0 +1,17 @@
+{
+    "exclude": [
+      "**/node_modules",
+      "**/__pycache__"
+    ],
+    "include": [
+      "llm",
+      "typings"
+    ],
+    "reportMissingTypeStubs": true,  // Reports missing type stubs for imported libraries
+    "reportUnknownMemberType": false,  // Ignores errors for unknown types on members
+    "reportUnknownVariableType": false,  // Ignores errors for unknown types on variables
+    "reportUnknownArgumentType": false,  // Ignores errors for unknown argument types
+    "reportGeneralTypeIssues": true,  // Reports general type issues
+    "typeCheckingMode": "basic",  // Type-checking mode, "basic" or "strict"
+  }
+  

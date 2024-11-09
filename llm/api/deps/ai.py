@@ -1,8 +1,9 @@
-import torch
-from typing import Optional
+from typing import Any, Optional
 from functools import lru_cache
-from transformers import pipeline, AutoConfig  # type: ignore
-from transformers.pipelines.base import Pipeline  # type: ignore
+import torch
+from transformers.models.auto.configuration_auto import AutoConfig
+from transformers.pipelines import pipeline
+from transformers.pipelines.base import Pipeline
 from pydantic import BaseModel
 
 class ModelConfig(BaseModel):
@@ -11,7 +12,7 @@ class ModelConfig(BaseModel):
 
 MODEL_NAME = "gpt2"
 
-hf_config = AutoConfig.from_pretrained(MODEL_NAME)
+hf_config: Any = AutoConfig.from_pretrained(MODEL_NAME)
 config = ModelConfig(
     pad_token_id=hf_config.pad_token_id or hf_config.eos_token_id,
     eos_token_id=hf_config.eos_token_id
